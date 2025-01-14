@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Own Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="content" class="card">
+        <h1>Welcome to Choose Your Lunch</h1>
+        <p>Choose your grub wisely...</p>
+        <div class="card-buttons">
+            <button onclick="choosePath('path1')" style="width: 100%;">Jersey Mikes</button>
+            <button onclick="choosePath('path2')" style="width: 100%;">Dave's Hot Chicken</button>
+        </div>
+    </div>
+
+    <script>
+        const paths = {
+            path1: `
+                <h1>Jersey Mikes</h1>
+                <p>You have chosen the first path. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path1a')" style="width: 100%;">Giant</button>
+                    <button onclick="choosePath('path1b')" style="width: 100%;">Regular</button>
+                </div>
+            `,
+            path1a: `
+                <h1>Path 1A</h1>
+                <p>You have chosen the first path A. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path1aa')" style="width: 100%;">Mikes Way</button>
+                    <button onclick="choosePath('path1ab')" style="width: 100%;">Youre a Toddler</button>
+                </div>
+            `,
+            path1aa: `
+                <h1>Path 1AA</h1>
+                <p>You have chosen the first path AA. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path1aaa')" style="width: 100%;">Add chips & drink</button>
+                    <button onclick="choosePath('path1aab')" style="width: 100%;">No point for no points</button>
+                </div>
+            `,
+            path1ab: `
+                <h1>Path 1AB</h1>
+                <p>You have chosen the first path AB. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path1aba')" style="width: 100%;">Path 1ABA</button>
+                    <button onclick="choosePath('path1abb')" style="width: 100%;">Path 1ABB</button>
+                </div>
+            `,
+            path1b: `
+                <h1>Path 1B</h1>
+                <p>You have chosen the first path B. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path1ba')" style="width: 100%;">Path 1BA</button>
+                    <button onclick="choosePath('path1bb')" style="width: 100%;">Path 1BB</button>
+                </div>
+            `,
+            path2: `
+                <h1>Daves Hot</h1>
+                <p>You have chosen the second path. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path2a')" style="width: 100%;">Slider Combo</button>
+                    <button onclick="choosePath('path2b')" style="width: 100%;">Just Tendies</button>
+                </div>
+            `,
+            path2a: `
+                <h1>Path 2A</h1>
+                <p>You have chosen the second path A. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path2aa')" style="width: 100%;">Medium</button>
+                    <button onclick="choosePath('path2ab')" style="width: 100%;">Hot</button>
+                </div>
+            `,
+            path2aa: `
+                <h1>Path 2AA</h1>
+                <p>You have chosen the second path AA. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path2aaa')" style="width: 100%;">Add Chips and a drink</button>
+                    <button onclick="choosePath('path2aab')" style="width: 100%;">I dont get points for those</button>
+                </div>
+            `,
+            path2ab: `
+                <h1>Path 2AB</h1>
+                <p>You have chosen the second path AB. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path2aba')" style="width: 100%;">Fries please</button>
+                    <button onclick="choosePath('path2abb')" style="width: 100%;">Sub Fries with Mac please</button>
+                </div>
+            `,
+            path2b: `
+                <h1>Path 2B</h1>
+                <p>You have chosen the second path B. What will you do next?</p>
+                <div class="card-buttons">
+                    <button onclick="choosePath('path2ba')" style="width: 100%;">Medium</button>
+                    <button onclick="choosePath('path2bb')" style="width: 100%;">Hot</button>
+                </div>
+            `
+            
+        };
+
+        function choosePath(path) {
+            if (paths[path]) {
+                document.getElementById('content').innerHTML = paths[path];
+            } else {
+                alert('Path not found!');
+            }
+        }
+    </script>
+</body>
+</html>
